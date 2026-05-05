@@ -85,15 +85,15 @@ The application will be available at:
 
 ```
 .
-├── chatbot/
-│   ├── app.py          # Streamlit frontend
-│   ├── api.py          # FastAPI backend
-│   ├── animalbot.py    # Core chatbot logic
-│   └── Dockerfile      # Docker configuration
-├── data/               # Data directory
-├── requirements.txt    # Python dependencies
-├── compose.yml         # Docker Compose configuration
-└── .env               # Environment variables (not in git)
+├-- chatbot/
+│   ├-- app.py          # Streamlit frontend
+│   ├-- api.py          # FastAPI backend
+│   ├-- animalbot.py    # Core chatbot logic
+│   └-- Dockerfile      # Docker configuration
+├-- data/               # Data directory
+├-- requirements.txt    # Python dependencies
+├-- compose.yml         # Docker Compose configuration
+└-- .env               # Environment variables (not in git)
 ```
 
 ## Development

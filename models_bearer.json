@@ -1,0 +1,215 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "object": "model",
+      "id": "qwen3-coder-30b-a3b-instruct",
+      "name": "Qwen 3 Coder 30B A3B Instruct",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text"],
+      "output": ["text"],
+      "demand": 0,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "glm-4.7",
+      "name": "GLM-4.7",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text"],
+      "output": ["text"],
+      "demand": 0,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "qwen3.5-27b",
+      "name": "Qwen 3.5 27B",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text", "image"],
+      "output": ["text", "thought"],
+      "demand": 0,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "apertus-70b-instruct-2509",
+      "name": "Apertus 70B Instruct 2509",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text"],
+      "output": ["text"],
+      "demand": 0,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "qwen3-omni-30b-a3b-instruct",
+      "name": "Qwen 3 Omni 30B A3B Instruct",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text", "image", "audio"],
+      "output": ["text"],
+      "demand": 0,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "devstral-2-123b-instruct-2512",
+      "name": "Devstral 2 123B Instruct 2512",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text"],
+      "output": ["text"],
+      "demand": 0,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "internvl3.5-30b-a3b",
+      "name": "InternVL 3.5 30B A3B",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text", "image", "video"],
+      "output": ["text"],
+      "demand": 0,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "qwen3.5-122b-a10b",
+      "name": "Qwen 3.5 122B A10B",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text", "image"],
+      "output": ["text", "thought"],
+      "demand": 2,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "qwen3.5-35b-a3b",
+      "name": "Qwen 3.5 35B A3B",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text", "image"],
+      "output": ["text", "thought"],
+      "demand": 0,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "qwen3.5-397b-a17b",
+      "name": "Qwen 3.5 397B A17B",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text", "image"],
+      "output": ["text", "thought"],
+      "demand": 1,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "mistral-large-3-675b-instruct-2512",
+      "name": "Mistral Large 3 675B Instruct 2512",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text", "image"],
+      "output": ["text"],
+      "demand": 0,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "meta-llama-3.1-8b-instruct",
+      "name": "Meta Llama 3.1 8B Instruct",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text"],
+      "output": ["text"],
+      "demand": 1107,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "openai-gpt-oss-120b",
+      "name": "OpenAI GPT OSS 120B",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text"],
+      "output": ["text"],
+      "demand": 1,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "gemma-3-27b-it",
+      "name": "Gemma 3 27B Instruct",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text", "image"],
+      "output": ["text"],
+      "demand": 0,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "qwen3-30b-a3b-instruct-2507",
+      "name": "Qwen 3 30B A3B Instruct 2507",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text"],
+      "output": ["text"],
+      "demand": 0,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "llama-3.3-70b-instruct",
+      "name": "Meta Llama 3.3 70B Instruct",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text"],
+      "output": ["text"],
+      "demand": 0,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "medgemma-27b-it",
+      "name": "MedGemma 27B Instruct",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text", "image"],
+      "output": ["text"],
+      "demand": 5,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "deepseek-r1-distill-llama-70b",
+      "name": "DeepSeek R1 Distill Llama 70B",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text"],
+      "output": ["text", "thought"],
+      "demand": 2,
+      "status": "ready"
+    },
+    {
+      "object": "model",
+      "id": "teuken-7b-instruct-research",
+      "name": "Teuken 7B Instruct Research",
+      "owned_by": "chat-ai",
+      "created": 1777553684,
+      "input": ["text"],
+      "output": ["text"],
+      "demand": 0,
+      "status": "ready" 
+      
+    }
+  ]
+}
