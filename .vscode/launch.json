@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug FastAPI (api.py)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/greenmind_ai/api.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/greenmind_ai",
+      "justMyCode": true
+    },
+    {
+      "name": "Run Streamlit App",
+      "type": "python",
+      "request": "launch",
+      "module": "streamlit",
+      "args": [
+        "run",
+        "app.py"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/greenmind_ai",
+      "justMyCode": true
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Run Both (FastAPI + Streamlit)",
+      "configurations": [
+        "Debug FastAPI (api.py)",
+        "Run Streamlit App"
+      ]
+    }
+  ]
+}

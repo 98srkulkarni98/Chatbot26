@@ -154,7 +154,8 @@ def chat(req: ChatRequest):
     return ChatResponse(
         session_id=session_id,
         response=response,
-        active_mode=log.get("agent_state", "educator"),
+        # active_mode=log.get("agent_state", "educator"),
+        active_mode=agent.state,
         classification=classification,
     )
 

@@ -426,6 +426,7 @@ GreenMind: """
         return PromptTemplate.from_template(prompt) | self.llm | StrOutputParser()
 
     def create_habit_chain(self):
+        
         prompt = """You are GreenMind, an AI assistant that helps users develop more sustainable habits around AI usage.
 
 Your knowledge covers:
@@ -459,6 +460,10 @@ GreenMind: """
 * Answer with one word only.
 * Answer with: educator, calculator, habit, or none.
 * Do not respond with more than one word.
+* You must NEVER call tools or functions.
+* You must NEVER output text like tool_call(...).
+* Always answer in plain natural language.
+* Alwas reply with below definitions to classify the message:
 
 Definitions:
 educator   = user wants to learn about AI environmental impact
@@ -515,6 +520,8 @@ Classification: """
 
         if text_classification in valid_states:
             self.state = text_classification
+            print('Current State:', self.state)  # Debugging line
+        print(text_classification)  # Debugging line
 
         # 3. Chain map (UPDATED)
         chain_map = {

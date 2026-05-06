@@ -218,5 +218,5 @@ if user_input:
             "content": result.get("response", "Error"),
             "mode": result.get("active_mode", "educator"),
         })
-
+        print("MODE_DEBUG:", result.get("active_mode", "educator"))
     st.rerun()
