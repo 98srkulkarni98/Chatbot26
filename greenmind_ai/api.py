@@ -97,7 +97,7 @@ class HealthResponse(BaseModel):
 # Constants
 # -----------------------------------------------------------------
 
-VALID_MODES = {"educator", "calculator", "habit", "none"}
+VALID_MODES = {"educator", "habit", "none"}
 
 
 # -----------------------------------------------------------------
@@ -113,17 +113,11 @@ def health():
 @app.get("/modes", tags=["System"])
 def get_modes():
     """Return available GreenMind modes."""
-    return {"modes": ["educator", "calculator", "habit"]}
+    return {"modes": ["educator", "habit"]}
 
 
 @app.post("/chat", response_model=ChatResponse, tags=["Chat"])
 def chat(req: ChatRequest):
-    """
-    Send a user message and receive a GreenMind response.
-
-    The agent detects intent and switches between:
-    educator | calculator | habit
-    """
 
     session_id = req.session_id or str(uuid.uuid4())
 
@@ -136,17 +130,13 @@ def chat(req: ChatRequest):
     history: list = session["history"]
     log_writer: LogWriter = session["log"]
 
-    # Generate response
     response, log = agent.get_response(req.message, history)
 
-    # Update history
     history.append(f"User: {req.message}")
     history.append(f"GreenMind: {response}")
 
-    # Persist log
     log_writer.write(log)
 
-    # Safe classification extraction
     classification = log.get("classification", {}).get("result", "none")
     if classification not in VALID_MODES:
         classification = "none"
@@ -154,8 +144,7 @@ def chat(req: ChatRequest):
     return ChatResponse(
         session_id=session_id,
         response=response,
-        # active_mode=log.get("agent_state", "educator"),
-        active_mode=agent.state,
+        active_mode=agent.state,   # 🔥 single source of truth
         classification=classification,
     )
 

@@ -16,10 +16,9 @@ import uuid
 API_URL = "http://localhost:8000"
 
 MODE_META = {
-    "educator":   {"icon": "🌍", "label": "Environmental Educator", "color": "#2e7d32"},
-    "calculator": {"icon": "🧮", "label": "Footprint Calculator",  "color": "#1565c0"},
-    "habit":      {"icon": "♻️", "label": "Habit Advisor",         "color": "#6a1b9a"},
-    "unknown":    {"icon": "🤖", "label": "GreenMind",             "color": "#37474f"},
+    "educator": {"icon": "🌍", "label": "Environmental Coach", "color": "#2e7d32"},
+    "habit":    {"icon": "♻️", "label": "Habit Advisor",       "color": "#6a1b9a"},
+    "none":     {"icon": "🤖", "label": "GreenMind",           "color": "#37474f"},
 }
 
 STARTER_PROMPTS = [
@@ -78,11 +77,9 @@ def send_message(user_text: str):
         )
         r.raise_for_status()
         return r.json()
-    except requests.exceptions.ConnectionError:
-        st.error("Cannot reach API. Run: uvicorn api:app --reload")
     except Exception as e:
         st.error(f"API error: {e}")
-    return None
+        return None
 
 
 def reset_session():
@@ -111,7 +108,7 @@ with st.sidebar:
     st.divider()
 
     mode = st.session_state.active_mode
-    meta = MODE_META.get(mode, MODE_META["unknown"])
+    meta = MODE_META.get(mode, MODE_META["none"])
 
     st.markdown("**Active Mode**")
     st.markdown(
@@ -123,7 +120,7 @@ with st.sidebar:
     st.divider()
 
     st.markdown("**What I can do:**")
-    for m in ["educator", "calculator", "habit"]:
+    for m in ["educator", "habit"]:
         info = MODE_META[m]
         st.markdown(f"{info['icon']} **{info['label']}**")
 
@@ -164,9 +161,13 @@ for msg in st.session_state.messages:
     if msg["role"] == "user":
         with st.chat_message("user"):
             st.markdown(msg["content"])
+
     else:
         mode = msg.get("mode", "educator")
-        meta = MODE_META.get(mode, MODE_META["unknown"])
+        if mode not in MODE_META:
+            mode = "educator"
+
+        meta = MODE_META[mode]
 
         with st.chat_message("assistant", avatar=meta["icon"]):
             st.markdown(
@@ -190,11 +191,16 @@ if hasattr(st.session_state, "_pending"):
         result = send_message(prompt)
 
     if result:
-        st.session_state.active_mode = result.get("active_mode", "educator")
+        mode = result.get("active_mode", "educator")
+        if mode not in MODE_META:
+            mode = "educator"
+
+        st.session_state.active_mode = mode
+
         st.session_state.messages.append({
             "role": "assistant",
             "content": result.get("response", "Error"),
-            "mode": result.get("active_mode", "educator"),
+            "mode": mode,
         })
 
     st.rerun()
@@ -212,11 +218,15 @@ if user_input:
         result = send_message(user_input)
 
     if result:
-        st.session_state.active_mode = result.get("active_mode", "educator")
+        mode = result.get("active_mode", "educator")
+        if mode not in MODE_META:
+            mode = "educator"
+
+        st.session_state.active_mode = mode
+
         st.session_state.messages.append({
             "role": "assistant",
             "content": result.get("response", "Error"),
-            "mode": result.get("active_mode", "educator"),
+            "mode": mode,
         })
-        print("MODE_DEBUG:", result.get("active_mode", "educator"))
     st.rerun()
