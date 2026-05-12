@@ -180,3 +180,4 @@ cython_debug/
 ###
 sus_bot/
 greenmind_ai_old/
+*.jsonl
