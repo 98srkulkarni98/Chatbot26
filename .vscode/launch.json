@@ -5,9 +5,9 @@
       "name": "Debug FastAPI (api.py)",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/greenmind_ai/api.py",
+      "program": "${workspaceFolder}/greenmind_ai_v3/api.py",
       "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/greenmind_ai",
+      "cwd": "${workspaceFolder}/greenmind_ai_v3",
       "justMyCode": true
     },
     {
@@ -20,7 +20,7 @@
         "app.py"
       ],
       "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/greenmind_ai",
+      "cwd": "${workspaceFolder}/greenmind_ai_v3",
       "justMyCode": true
     }
   ],
